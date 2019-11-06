@@ -51,6 +51,7 @@ function zip(source, target) {
   // append files from a sub-directory, putting its contents at the root of archive
   archive.glob('**', {
     cwd: source,
+    dot: true,
     ignore: ['node_modules/**', 'dist/**', '.nuxt/**']
   })
 

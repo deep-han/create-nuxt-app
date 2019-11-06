@@ -15,7 +15,7 @@
     "*.js"
   ],
   "repository": {
-    "url": "git+https://github.com/FEmessage/create-nuxt-app.git",
+    "url": "git+https://github.com/deep-han/create-nuxt-app.git",
     "type": "git"
   },
   "scripts": {
@@ -109,7 +109,6 @@
           ]
         }
       ],
-      "@semantic-release/npm",
       [
         "@semantic-release/github",
         {
