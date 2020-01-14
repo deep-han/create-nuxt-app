@@ -2,7 +2,7 @@
  * @Author: Han 
  * @Date: 2020-01-13 17:22:51 
  * @Last Modified by: Han
- * @Last Modified time: 2020-01-14 10:01:41
+ * @Last Modified time: 2020-01-14 11:41:41
  */
 
 /**
@@ -112,7 +112,14 @@ export class Repository {
   }
 }
 
-export class ElementRepository extends Repository {
+/**
+ *可以通过继承 Repository 来实现不满足 RESTful 最佳实践的接口
+ *这是一个例子, 接口的 query 上必须带 appId，接口的设计包含多个主从 id 等
+ * @export
+ * @class ExampleRepository
+ * @extends {Repository}
+ */
+export class ExampleRepository extends Repository {
   constructor(resource, id) {
     super(resource)
     this.id = id
