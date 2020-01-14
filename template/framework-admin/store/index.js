@@ -107,7 +107,7 @@ export const actions = {
   },
 
   async refresh({commit, dispatch}, token) {
-    const userInfo = await this.$http.token.index({
+    const userInfo = await this.$http.userInfo.index({
       params: {
         token,
       },
