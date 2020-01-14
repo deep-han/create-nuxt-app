@@ -1,6 +1,5 @@
 import cookie from 'js-cookie'
 import meta from '@/const/meta'
-import menuCode from '@/const/menu-codes'
 
 const cookieConfig = {
   get domain() {
@@ -82,6 +81,10 @@ export const mutations = {
     state.headerMenu = payload
   },
 
+  setSiderMenu(state, payload) {
+    state.siderMenu = payload
+  },
+
   setUserInfo(state, payload = {}) {
     const {params = {}, username, avatar = '', tenantId, token} = payload
     state.username = params.nickname || username
@@ -98,6 +101,7 @@ export const actions = {
       const userInfo = await this.$http.login.create(body)
       commit('setUserInfo', userInfo.payload)
       dispatch('getHeaderMenu')
+      dispatch('getSiderMenu')
       this.$router.replace(redirect)
 
       return userInfo
@@ -113,6 +117,7 @@ export const actions = {
       },
     })
     dispatch('getHeaderMenu')
+    dispatch('getSiderMenu')
     commit('setUserInfo', userInfo.payload)
   },
 
@@ -120,9 +125,19 @@ export const actions = {
     const menus = await this.$http.menus.index({
       params: {
         appId: process.env.APP_ID,
-        code: menuCode.MAIN,
+        code: 'main',
       },
     })
     commit('setHeaderMenu', menus.payload)
   },
+
+  async getSiderMenu({commit}) {
+    const menus = await this.$http.menus.index({
+      params: {
+        appId: process.env.APP_ID,
+        code: 'account-enterprise',
+      },
+    })
+    commit('setSiderMenu', menus.payload)
+  }
 }

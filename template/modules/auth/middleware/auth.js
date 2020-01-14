@@ -2,7 +2,7 @@
  * @Author: Han
  * @Date: 2019-05-08 14:32:04
  * @Last Modified by: Han
- * @Last Modified time: 2020-01-14 16:42:18
+ * @Last Modified time: 2020-01-14 18:58:37
  * @Description 路由鉴权中间件，实现其他路由守卫功能请新建一个中间件
  *
  * **********************************************************
@@ -40,7 +40,7 @@ export default async ({store, redirect, env, route}) => {
   // 未登录
   if (!token) {
     <%_ if (template !== 'mobile') { _%>
-    rredirect(`${LOGIN_PATH}?redirect=${encodeURIComponent(fullPath)}`)
+    redirect(`${LOGIN_PATH}?redirect=${encodeURIComponent(fullPath)}`)
     <%_ } _%>
     return
   }
