@@ -1,5 +1,5 @@
 {
-  "name": "@femessage/create-nuxt-app",
+  "name": "@deep-han/create-nuxt-app",
   "version": "1.0.0",
   "description": "Create a Deepexi App in seconds.",
   "bin": {
@@ -15,7 +15,7 @@
     "*.js"
   ],
   "repository": {
-    "url": "git+https://github.com/FEmessage/create-nuxt-app.git",
+    "url": "git+https://github.com/deep-han/create-nuxt-app.git",
     "type": "git"
   },
   "scripts": {
