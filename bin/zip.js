@@ -11,6 +11,8 @@ const zipDirList = glob.sync('*', {
   ignore: '*.zip',
 })
 
+console.log(zipDirList)
+
 function zip(source, target) {
   const output = fs.createWriteStream(target)
   const archive = archiver('zip', {
