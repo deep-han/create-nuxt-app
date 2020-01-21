@@ -1,6 +1,6 @@
 {
   "name": "@hanxx/create-nuxt-app",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Create a Deepexi App in seconds.",
   "bin": {
     "create-nuxt-app": "bin/cli.js"
